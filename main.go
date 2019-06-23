@@ -1,11 +1,9 @@
 package main
 
 import (
-	"fmt"
-	"github.com/chulinshao/rehab/config"
+	"github.com/chulinshao/rehab/app"
 )
 
 func main() {
-	//app.StartApp()
-	fmt.Print(config.InitConfig())
+	app.StartApp()
 }

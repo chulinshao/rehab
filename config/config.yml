@@ -1,9 +1,10 @@
 db:
-  ip: 127.0.0.1
+  ip: 120.76.157.34
   port: 3306
-  username: root
-  password: 123456
-  dbname: rehab
+  username: rehab-dev
+  password: rehab_168123
+  dbname: dzy_wx
   showlog: true
   debuglog: true
+  drivername: mysql
 

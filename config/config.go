@@ -12,16 +12,17 @@ type Config struct {
 }
 
 type DbConfig struct {
-	Ip       string
-	Port     int
-	Username string
-	Password string
-	DbName   string
-	ShowLog  bool
-	Debuglog bool
+	Ip         string
+	Port       int
+	Username   string
+	Password   string
+	DbName     string
+	ShowLog    bool
+	Debuglog   bool
+	DriverName string
 }
 
-func InitConfig() Config {
+func GetConfig() Config {
 	path, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
