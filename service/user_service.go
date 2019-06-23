@@ -11,5 +11,5 @@ func NewUserService() UserService {
 type userService struct{}
 
 func (s userService) GetAll() string {
-	return "xxxxx"
+	return "test"
 }

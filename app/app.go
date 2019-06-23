@@ -1,11 +1,11 @@
-package main
+package app
 
 import (
 	"github.com/chulinshao/rehab/web/router"
 	"github.com/kataras/iris"
 )
 
-func main() {
+func StartApp() {
 	app := iris.New()
 	app.Logger().SetLevel("debug")
 	router.ConfigUserRouter(app)

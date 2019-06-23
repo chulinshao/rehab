@@ -8,12 +8,6 @@ import (
 )
 
 func ConfigUserRouter(app *iris.Application) {
-
-	//mvc.Configure(app.Party("/user"), func(app *mvc.Application) {
-	//	userService := service.NewUserService()
-	//	app.Register(userService)
-	//	app.Handle(new(controller.UserController))
-	//})
 	user := mvc.New(app.Party("/user"))
 	user.Register(service.NewUserService())
 	user.Handle(new(controller.UserController))

@@ -3,11 +3,13 @@ module github.com/chulinshao/rehab
 go 1.12
 
 replace (
+	cloud.google.com/go => github.com/GoogleCloudPlatform/google-cloud-go v0.34.0
 	golang.org/x/crypto => github.com/golang/crypto v0.0.0-20190325154230-a5d413f7728c
 	golang.org/x/net => github.com/golang/net v0.0.0-20181023162649-9b4f9f5ad519
 	golang.org/x/sys => github.com/golang/sys v0.0.0-20190329044733-9eb1bfa1ce65
 	golang.org/x/text => github.com/golang/text v0.3.0
 	golang.org/x/tools => github.com/golang/tools v0.0.0-20181221001348-537d06c36207
+	google.golang.org/appengine => github.com/golang/appengine v1.4.0
 )
 
 require (
@@ -18,6 +20,7 @@ require (
 	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/flosch/pongo2 v0.0.0-20190505152737-8914e1cf9164 // indirect
+	github.com/go-xorm/xorm v0.7.3 // indirect
 	github.com/iris-contrib/blackfriday v2.0.0+incompatible // indirect
 	github.com/iris-contrib/formBinder v0.0.0-20190104093907-fbd5963f41e1 // indirect
 	github.com/iris-contrib/go.uuid v2.0.0+incompatible // indirect
@@ -32,5 +35,5 @@ require (
 	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/ryanuber/columnize v2.1.0+incompatible // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
-	golang.org/x/crypto v0.0.0-00010101000000-000000000000 // indirect
+	gopkg.in/yaml.v2 v2.2.2
 )
