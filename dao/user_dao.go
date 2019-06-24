@@ -1,6 +1,9 @@
 package dao
 
-import "github.com/go-xorm/xorm"
+import (
+	"github.com/chulinshao/rehab/models"
+	"github.com/go-xorm/xorm"
+)
 
 type UserDao struct {
 	engine *xorm.Engine
@@ -12,6 +15,14 @@ func NewUserDao(engine *xorm.Engine) *UserDao {
 	}
 }
 
-func (dao UserDao) GetAll() string {
-	return "test123"
+func (dao UserDao) GetAll() []models.User {
+	user := make([]models.User, 0)
+	dao.engine.Find(&user)
+	return user
+}
+
+func (dao UserDao) FindByID(id string) models.User {
+	user := models.User{}
+	dao.engine.Id(id).Get(&user)
+	return user
 }

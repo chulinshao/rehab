@@ -12,14 +12,16 @@ type Config struct {
 }
 
 type DbConfig struct {
-	Ip         string
-	Port       int
-	Username   string
-	Password   string
-	DbName     string
-	ShowLog    bool
-	Debuglog   bool
-	DriverName string
+	Ip           string
+	Port         int
+	Username     string
+	Password     string
+	DbName       string
+	ShowLog      bool
+	Debuglog     bool
+	DriverName   string
+	MaxIdleConns int
+	MaxOpenConns int
 }
 
 func GetConfig() Config {

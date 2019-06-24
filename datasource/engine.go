@@ -32,12 +32,17 @@ func GetEngine() *xorm.Engine {
 	if err != nil {
 		log.Fatal("init db engine error")
 	} else {
+		dbEngine.SetMaxIdleConns(config.Db.MaxIdleConns)
+		dbEngine.SetMaxOpenConns(config.Db.MaxOpenConns)
 		engine = dbEngine
 		engine.ShowSQL(config.Db.ShowLog)
-
 		if config.Db.Debuglog {
 			engine.Logger().SetLevel(core.LOG_DEBUG)
 		}
 	}
+
+	// 设置前缀
+	tbMapper := core.NewPrefixMapper(core.SnakeMapper{}, "dzy_")
+	engine.SetTableMapper(tbMapper)
 	return engine
 }

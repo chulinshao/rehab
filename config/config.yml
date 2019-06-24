@@ -7,4 +7,6 @@ db:
   showlog: true
   debuglog: true
   drivername: mysql
+  maxidleconns: 10
+  maxopenconns: 50
 
