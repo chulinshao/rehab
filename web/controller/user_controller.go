@@ -7,5 +7,5 @@ type UserController struct {
 }
 
 func (c UserController) GetAll() string {
-	return c.Service.GetAll()
+	return c.Service.ListAll()
 }

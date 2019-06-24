@@ -6,7 +6,7 @@ import (
 )
 
 type UserService interface {
-	GetAll() string
+	ListAll() string
 }
 
 func NewUserService() UserService {
@@ -19,6 +19,6 @@ type userService struct {
 	dao *dao.UserDao
 }
 
-func (s userService) GetAll() string {
+func (s userService) ListAll() string {
 	return s.dao.GetAll()
 }
