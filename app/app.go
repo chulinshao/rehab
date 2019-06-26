@@ -8,7 +8,7 @@ import (
 func StartApp() {
 	app := iris.New()
 	app.Logger().SetLevel("debug")
-	router.ConfigUserRouter(app)
+	router.ConfigRouter(app)
 	//开启web服务
 	app.Run(
 		//开启web服务
