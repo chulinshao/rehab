@@ -17,6 +17,6 @@ func NewAccountDao(engine *xorm.Engine) *AccountDao {
 
 func (dao AccountDao) GetByCode(code string) models.DoctorAccount {
 	account := models.DoctorAccount{Code: code}
-	dao.engine.Find(account)
+	dao.engine.Id(code).Get(&account)
 	return account
 }
