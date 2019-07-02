@@ -5,5 +5,6 @@ import (
 )
 
 func main() {
+	// 启动类
 	app.StartApp()
 }

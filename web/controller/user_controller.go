@@ -1,18 +1,21 @@
 package controller
 
 import (
-	"github.com/chulinshao/rehab/models"
+	"github.com/chulinshao/rehab/common"
 	"github.com/chulinshao/rehab/service"
+	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 type UserController struct {
 	Service service.UserService
 }
 
-func (c UserController) GetAll() []models.User {
-	return c.Service.ListAll()
+func (ctl UserController) ListAll(c *gin.Context) {
+	c.JSON(http.StatusOK, common.Result{Data: ctl.Service.ListAll()})
 }
 
-func (c UserController) GetById(id string) models.User {
-	return c.Service.FindById(id)
+func (ctl UserController) GetById(c *gin.Context) {
+	id := c.Param("id")
+	c.JSON(http.StatusOK, common.Result{Data: ctl.Service.FindById(id)})
 }
