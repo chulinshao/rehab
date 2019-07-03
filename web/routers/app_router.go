@@ -22,6 +22,7 @@ func configAccountRouter(r *gin.Engine) {
 	account := r.Group("/account")
 	{
 		account.GET("/code/:code", ctl.GetByCode)
+		account.POST("/updateAlipayAccount", ctl.UpdateAlipayAccount)
 	}
 }
 

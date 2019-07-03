@@ -12,6 +12,7 @@ type AccountController struct {
 	Service service.AccountService
 }
 
+// GET /account/code/:code
 func (ctl AccountController) GetByCode(c *gin.Context) {
 	code := c.Param("code")
 	result := common.GetResult()
@@ -24,4 +25,27 @@ func (ctl AccountController) GetByCode(c *gin.Context) {
 	doctorAccount.RefereeCommentary = decimal.NewFromFloat(tjtc)
 	result.Data = doctorAccount
 	c.JSON(http.StatusOK, result)
+}
+
+func (ctl AccountController) UpdateAlipayAccount(c *gin.Context)  {
+	doctorCode := c.PostForm("doctorCode")
+	alipayAccount := c.PostForm("alipayAccount")
+
+	result := common.GetResult()
+	err := common.IsNull(&result, doctorCode, "doctorCode")
+	if err != nil {
+		c.JSON(http.StatusOK, result)
+		return
+	}
+	err = common.IsNull(&result, alipayAccount, "alipayAccount")
+	if err != nil {
+		c.JSON(http.StatusOK, result)
+		return
+	}
+	ctl.Service.UpdateAlipayAccount(doctorCode, alipayAccount)
+	c.JSON(http.StatusOK, result)
+}
+
+func (ctl AccountController) ApplyWithdrawals(c *gin.Context)  {
+
 }

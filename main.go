@@ -1,8 +1,6 @@
 package main
 
-import (
-	"github.com/chulinshao/rehab/app"
-)
+import "github.com/chulinshao/rehab/app"
 
 func main() {
 	// 启动类
